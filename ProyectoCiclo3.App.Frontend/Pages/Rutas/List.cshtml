@@ -1,42 +1,29 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListRutasModel
 @{
 }
-
+ 
 <table class="table table-hover">
-    <thead>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tiempo estimado(Horas)</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var ruta in Model.Rutas)
+    {
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Direccion</th>
-            <th scope="col">Coordenada X</th>
-            <th scope="col">Coordenada Y</th>
-            <th scope="col">Tipo</th>
+            <td>@ruta.id</td>
+            <td>@ruta.tiempo_estimado</td>
+            <td>
+              <a class="btn btn-info" asp-page="./Details" asp-route-estacionId="@ruta.id"><i class="fas fa-adjust"></i>Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-estacionId="@ruta.id">Editar</a>
+              <a class="btn btn-danger" href="">Eliminar</a>
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Centro</td>
-            <td>Cra 27</td>
-            <td>7.145</td>
-            <td>70.145</td>
-            <td>Principal</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Estadio</td>
-            <td>Cra 270</td>
-            <td>71.145</td>
-            <td>10.145</td>
-            <td>Principal</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Terminal</td>
-            <td>Calle 2</td>
-            <td>6.145</td>
-            <td>10.145</td>
-            <td>Segundaria</td>
-        </tr>
-    </tbody>
+    }
+
+  </tbody>
 </table>
