@@ -5,28 +5,27 @@ using System;
  
 namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
 {
-    public class RepositorioBuses
+    public class RepositorioEstaciones
     {
-        List<Buses> buses;
+        List<Estaciones> estaciones;
  
-    public RepositorioBuses()
+    public RepositorioEstaciones()
         {
-            buses= new List<Buses>()
+            estaciones= new List<Estaciones>()
             {
-                new Buses{id=1,marca="Audi",modelo= "2020",kilometraje= 100000,numero_asientos= 4,placa= "POP678"},
-                new Buses{id=2,marca="Toyota",modelo= "2021",kilometraje= 90000,numero_asientos= 16,placa= "OIU859"},
-                new Buses{id=3,marca="Mazda",modelo= "2000",kilometraje= 150000,numero_asientos= 24,placa= "YUH859"}
- 
+                new Estaciones{id=1,nombre="Centro",direccion= "cra 90",coord_x= "14.4545",coord_y= "4.1254545",tipo= "Principal"},
+                new Estaciones{id=2,nombre="Estadio",direccion= "calle 70",coord_x= "9.05454",coord_y= "16.14587",tipo= "Segundaria"},
+                new Estaciones{id=3,nombre="Terminal",direccion= "Carrera 54",coord_x= "15.457878",coord_y= "24.457878",tipo= "Principal"}
             };
         }
  
-        public IEnumerable<Buses> GetAll()
+        public IEnumerable<Estaciones> GetAll()
         {
-            return buses;
+            return estaciones;
         }
  
-        public Buses GetWithId(int id){
-            return buses.SingleOrDefault(b => b.id == id);
+        public Estaciones GetWithId(int id){
+            return estaciones.SingleOrDefault(e => e.id == id);
         }
     }
 }
