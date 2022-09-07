@@ -6,8 +6,8 @@
  
 <div class="text-center">
 <form method="post">
-  <label for="id" class="form-label">id:</label>
-  <input type="number" class="form-control" id="id" name="id" placeholder="id" asp-for="@estacion.id">
+ 
+  <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@estacion.id">
 
   <label for="Nombre" class="form-label">Nombre:</label>
   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" asp-for="@estacion.nombre">
@@ -25,6 +25,6 @@
   <input type="text" class="form-control" id="tipo" name="tipo" placeholder="tipo" asp-for="@estacion.tipo">
 
   <hr>
-  <button type="submit" class="btn btn-success">Enviar</button>
+  <button type="submit" class="btn btn-success">Actualizar</button>
 </form>
 </div>
