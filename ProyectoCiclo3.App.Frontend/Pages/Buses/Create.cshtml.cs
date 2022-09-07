@@ -6,13 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProyectoCiclo3.App.Persistencia.AppRepositorios;
 using ProyectoCiclo3.App.Dominio;
+
  
 namespace ProyectoCiclo3.App.Frontend.Pages
 {
     public class FormBusModel : PageModel
     {
  
-        private readonly RepositorioBuses repositorioBuses;
+        private readonly RepositorioBuses repositorioBuses; 
+
         [BindProperty]
         public Buses Bus {get;set;}
  
