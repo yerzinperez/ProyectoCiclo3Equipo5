@@ -27,5 +27,15 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         public Rutas GetWithId(int id){
             return rutas.SingleOrDefault(e => e.id == id);
         }
+
+        public Rutas Delete(int id)
+        {
+        var ruta= rutas.SingleOrDefault(b => b.id == id);
+        rutas.Remove(ruta);
+        return ruta;
+        }
+
+
+
     }
 }
