@@ -2,35 +2,65 @@
 @model ProyectoCiclo3.App.Frontend.Pages.FormBusModel
 @{
 }
- 
+
 <div class="text-center">
-<form method="POST">
+    <form method="POST">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="id" class="form-label">id:</label>
+                    <input type="number" class="form-control" placeholder="Id" asp-for="Bus.id">
+                    <span class="valid-feedback" asp-validation-for="Bus.id">este es un campo requerido</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="valid-feedback" asp-validation-for="Bus.marca"></span>
+                    <label for="Marca" class="form-label">Marca:</label>
+                    <input type="text" class="form-control" placeholder="Marca" asp-for="Bus.marca">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="valid-feedback" asp-validation-for="Bus.modelo"></span>
+                    <label for="Modelo" class="form-label">Modelo:</label>
+                    <input type="number" class="form-control" placeholder="Modelo" asp-for="Bus.modelo">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="Kilometraje" class="form-label">Kilometraje:</label>
+                    <input type="number" class="form-control" placeholder="Kilometraje" asp-for="Bus.kilometraje">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="Número de asientos" class="form-label">Número de asientos:</label>
+                    <input type="number" class="form-control" placeholder="Número de asientos" asp-for="Bus.numero_asientos">
+                </div>
+            </div>
+        </div>
 
-  <span class="text-danger" asp-validation-for="Bus.id"></span>
-  <label for="id" class="form-label">id:</label>
-  <input type="number" class="form-control" placeholder="Id" asp-for="Bus.id">
-
-  <span class="text-danger" asp-validation-for="Bus.marca"></span>
-  <label for="Marca" class="form-label">Marca:</label>
-  <input type="text" class="form-control" placeholder="Marca" asp-for="Bus.marca">
- 
-  <span class="text-danger" asp-validation-for="Bus.modelo"></span>
-  <label for="Modelo" class="form-label">Modelo:</label>
-  <input type="number" class="form-control" placeholder="Modelo" asp-for="Bus.modelo">
-
-
-  <label for="Kilometraje" class="form-label">Kilometraje:</label>
-  <input type="number" class="form-control" placeholder="Kilometraje" asp-for="Bus.kilometraje">
-
-  <label for="Número de asientos" class="form-label">Número de asientos:</label>
-  <input type="number" class="form-control" placeholder="Número de asientos" asp-for="Bus.numero_asientos">
-
-
-  <span class="text-danger" asp-validation-for="Bus.placa"></span>
-  <label for="Placa" class="form-label">Placa:</label>
-  <input type="text" class="form-control" placeholder="Placa" asp-for="Bus.placa">
-  
-  <hr>
-  <button type="submit" class="btn btn-success">Crear</button>
-</form>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="valid-feedback" asp-validation-for="Bus.placa"></span>
+                    <label for="Placa" class="form-label">Placa:</label>
+                    <input type="text" class="form-control" placeholder="Placa" asp-for="Bus.placa">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-success">Crear</button>
+    </form>
 </div>
