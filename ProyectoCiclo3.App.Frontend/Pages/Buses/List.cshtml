@@ -26,10 +26,10 @@
                 <div class="text-center">
                     <a class="btn btn-sm btn-success" asp-page="./Details" asp-route-busId="@bus.id"><i class="fa-solid fa-eye"></i></a>
                     <a class="btn btn-sm btn-info" asp-page="./Edit" asp-route-busId="@bus.id"><i class="fa-solid fa-pencil"></i></a>
-                    <form method="POST">
+                    <form method="POST" class="d-inline">
                         <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@bus.id">
                         <button type="submit" class="btn btn-sm btn-danger" href=""><i class="fa-solid fa-trash"></i></button>
-            </form>
+                    </form>
                 </div>
               </td>
         </tr>
