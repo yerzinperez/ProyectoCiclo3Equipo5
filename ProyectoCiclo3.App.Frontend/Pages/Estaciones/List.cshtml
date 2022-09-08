@@ -26,11 +26,11 @@
             <td>@estacion.coord_y</td>
             <td>@estacion.tipo</td>
             <td>
-              <a class="btn btn-success" asp-page="./Details" asp-route-estacionId="@estacion.id"><i class="fas fa-adjust"></i>Ver</a>
-              <a class="btn btn-info" asp-page="./Edit" asp-route-estacionId="@estacion.id">Editar</a>
-              <form method="POST">
+              <a class="btn btn-sm btn-success" asp-page="./Details" asp-route-estacionId="@estacion.id"><i class="fa-solid fa-eye"></i></a>
+              <a class="btn btn-sm btn-info" asp-page="./Edit" asp-route-estacionId="@estacion.id"><i class="fa-solid fa-pencil"></i></a>
+              <form method="POST" class="d-inline">
               <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@estacion.id">
-              <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+              <button type="submit" class="btn btn-sm btn-danger" href=""><i class="fa-solid fa-trash"></i></button>
             </form>
             </td>
         </tr>

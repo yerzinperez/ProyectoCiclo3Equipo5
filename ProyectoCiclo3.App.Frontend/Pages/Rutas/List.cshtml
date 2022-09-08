@@ -22,9 +22,12 @@
             <td>@ruta.destino</td>
             <td>@ruta.tiempo_estimado</td>
             <td>
-              <a class="btn btn-success" asp-page="./Details" asp-route-rutaId="@ruta.id"><i class="fas fa-adjust"></i>Ver</a>
-              <a class="btn btn-info" asp-page="./Edit" asp-route-rutaId="@ruta.id">Editar</a>
-              <a class="btn btn-danger" href="">Eliminar</a>
+              <a class="btn btn-sm btn-success" asp-page="./Details" asp-route-rutaId="@ruta.id"><i class="fa-solid fa-eye"></i></a>
+              <a class="btn btn-sm btn-info" asp-page="./Edit" asp-route-rutaId="@ruta.id"><i class="fa-solid fa-pencil"></i></a>
+              <form method="POST" class="d-inline">
+              <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@ruta.id">
+              <button type="submit" class="btn btn-sm btn-danger" href=""><i class="fa-solid fa-trash"></i></button>
+            </form>
             </td>
         </tr>
     }
