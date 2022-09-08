@@ -1,23 +1,36 @@
 @page
-@model ProyectoCiclo3.App.Frontend.Pages.FormBusesModel
-
+@model ProyectoCiclo3.App.Frontend.Pages.FormBusModel
+@{
+}
+ 
 <div class="text-center">
-    <form method="POST">
-        <label for="marca" class="form-label">Marca:</label>
-        <input type="text" class="form-control" id="marca" name="marca" required placeholder="Marca">
-        <label for="modelo" class="form-label">Modelo:</label>
-        <input type="text" class="form-control" id="modelo" name="modelo" required placeholder="Modelo">
-        <label for="kilometraje" class="form-label">Kilometraje:</label>
-        <input type="number" class="form-control" id="kilometraje" name="kilometraje" required placeholder="Kilometraje">
-        <label for="numero_asientos" class="form-label">Numero de Asientos:</label>
-        <input type="number" class="form-control" id="numero_asientos" name="numero_asientos" required placeholder="numero_asientos">
-        <label for="tipo">Tipo:</label>
-        <select name="tipo" id="tipo" class="form-control">
-            <option value="">Seleccione el Tipo</option>
-            <option value="Principal">Principal</option>
-            <option value="Segundaria">Segundaria</option>
-        </select>
-        <hr>
-        <button type="submit" class="btn btn-success">Enviar</button>
-    </form>
+<form method="POST">
+
+  <span class="text-danger" asp-validation-for="Bus.id"></span>
+  <label for="id" class="form-label">id:</label>
+  <input type="number" class="form-control" placeholder="Id" asp-for="Bus.id">
+
+  <span class="text-danger" asp-validation-for="Bus.marca"></span>
+  <label for="Marca" class="form-label">Marca:</label>
+  <input type="text" class="form-control" placeholder="Marca" asp-for="Bus.marca">
+ 
+  <span class="text-danger" asp-validation-for="Bus.modelo"></span>
+  <label for="Modelo" class="form-label">Modelo:</label>
+  <input type="number" class="form-control" placeholder="Modelo" asp-for="Bus.modelo">
+
+
+  <label for="Kilometraje" class="form-label">Kilometraje:</label>
+  <input type="number" class="form-control" placeholder="Kilometraje" asp-for="Bus.kilometraje">
+
+  <label for="Número de asientos" class="form-label">Número de asientos:</label>
+  <input type="number" class="form-control" placeholder="Número de asientos" asp-for="Bus.numero_asientos">
+
+
+  <span class="text-danger" asp-validation-for="Bus.placa"></span>
+  <label for="Placa" class="form-label">Placa:</label>
+  <input type="text" class="form-control" placeholder="Placa" asp-for="Bus.placa">
+  
+  <hr>
+  <button type="submit" class="btn btn-success">Crear</button>
+</form>
 </div>
