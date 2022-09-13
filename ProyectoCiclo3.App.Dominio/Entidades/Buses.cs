@@ -7,7 +7,6 @@ namespace ProyectoCiclo3.App.Dominio
     {
         //objetos de clase
 
-        [Required]
         public int id { get; set; }
         
         [Required]

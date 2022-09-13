@@ -35,8 +35,7 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
                 estacion.coord_x = newEstacion.coord_x;
                 estacion.coord_y = newEstacion.coord_y;
                 estacion.tipo = newEstacion.tipo;
-                //Guardar en base de datos
-                 _appContext.SaveChanges();
+                _appContext.SaveChanges();
             }
             return estacion;
         }
