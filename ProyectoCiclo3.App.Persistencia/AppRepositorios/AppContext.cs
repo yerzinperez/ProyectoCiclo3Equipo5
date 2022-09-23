@@ -13,7 +13,7 @@ namespace ProyectoCiclo3.App.Persistencia
         {
             if (!optionsBuilder.IsConfigured){
                 //optionsBuilder.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = ProyectoCiclo3");
-                optionsBuilder.UseSqlServer("Data Source = equipo5.database.windows.net; Initial Catalog = ProyectoCiclo3; User ID=admin_equipo5;Password=Equip5Pass");
+                optionsBuilder.UseSqlServer("Data Source = equipo5.database.windows.net; Initial Catalog = ProyectoCiclo3; User ID=admin;Password=pass");
             }
         }
     }
