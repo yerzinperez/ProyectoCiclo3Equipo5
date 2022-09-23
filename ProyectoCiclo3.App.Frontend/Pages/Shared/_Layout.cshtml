@@ -17,38 +17,44 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Inicio</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Buses
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Buses/Create">Crear</a>
-                                <a class="dropdown-item" href="/Buses/List">Ver</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Estaciones
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Estaciones/Create">Crear</a>
-                                <a class="dropdown-item" href="/Estaciones/List">Ver</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Rutas
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Rutas/Create">Crear</a>
-                                <a class="dropdown-item" href="/Rutas/List">Ver</a>
-                            </div>
-                        </li>
-                    </ul>
+                    @Html.Partial("_LoginPartial")
+
+                    @using Microsoft.AspNetCore.Identity
+                    @inject SignInManager<IdentityUser> SignInManager
+                    @if (SignInManager.IsSignedIn(User)){
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Index">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    Buses
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Buses/Create">Crear</a>
+                                    <a class="dropdown-item" href="/Buses/List">Ver</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    Estaciones
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Estaciones/Create">Crear</a>
+                                    <a class="dropdown-item" href="/Estaciones/List">Ver</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    Rutas
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Rutas/Create">Crear</a>
+                                    <a class="dropdown-item" href="/Rutas/List">Ver</a>
+                                </div>
+                            </li>
+                        </ul>
+                        }
                 </div>
             </div>
         </nav>
