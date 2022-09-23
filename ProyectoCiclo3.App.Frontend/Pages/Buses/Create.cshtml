@@ -10,18 +10,18 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <span class="valid-feedback" asp-validation-for="Bus.marca"></span>
                     <label for="Marca" class="form-label">Marca:</label>
-                    <input type="text" class="form-control" placeholder="Marca" asp-for="Bus.marca">
+                    <input type="text" class="form-control" placeholder="Marca" required asp-for="Bus.marca">
+                    <span class="valid-feedback" asp-validation-for="Bus.marca"></span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <span class="valid-feedback" asp-validation-for="Bus.modelo"></span>
                     <label for="Modelo" class="form-label">Modelo:</label>
-                    <input type="number" class="form-control" placeholder="Modelo" asp-for="Bus.modelo">
+                    <input type="number" class="form-control" placeholder="Modelo" required asp-for="Bus.modelo">
+                    <span class="valid-feedback" asp-validation-for="Bus.modelo"></span>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="Kilometraje" class="form-label">Kilometraje:</label>
-                    <input type="number" class="form-control" placeholder="Kilometraje" asp-for="Bus.kilometraje">
+                    <input type="number" class="form-control" placeholder="Kilometraje" required asp-for="Bus.kilometraje">
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="Número de asientos" class="form-label">Número de asientos:</label>
-                    <input type="number" class="form-control" placeholder="Número de asientos" asp-for="Bus.numero_asientos">
+                    <input type="number" class="form-control" placeholder="Número de asientos" required asp-for="Bus.numero_asientos">
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <span class="valid-feedback" asp-validation-for="Bus.placa"></span>
                     <label for="Placa" class="form-label">Placa:</label>
-                    <input type="text" class="form-control" placeholder="Placa" asp-for="Bus.placa">
+                    <input type="text" class="form-control" placeholder="Placa" required asp-for="Bus.placa">
                 </div>
             </div>
         </div>

@@ -1,24 +1,38 @@
 @page
 @model ProyectoCiclo3.App.Frontend.Pages.FormRutasModel
+@{
+}
 
 <div class="text-center">
     <form method="POST">
-        <label for="tipo">Origen:</label>
-        <select asp-for="Rutas.origenid" name="origen" id="origen" class="form-control">
-            <option value="" disabled selected>Seleccionar un origen</option>
-            @foreach (var estacion in Model.Estaciones){
-                <option value="@estacion.id">@estacion.nombre</option>
-            }
-        </select>
-        <label for="tipo">Destino:</label>
-        <select asp-for="Rutas.destinoid" name="destino" id="destino" class="form-control">
-            <option value="" disabled selected>Seleccionar un destino</option>
-            @foreach (var estacion in Model.Estaciones){
-            <option value="@estacion.id">@estacion.nombre</option>
-            }
-        </select>
-        <label for="tiempo" class="form-label">Tiempo:</label>
-        <input type="text" class="form-control" id="tiempo" name="tiempo" asp-for="tiempo_estimado" required placeholder="Tiempo">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="origen" class="form-label">Origen:</label>
+                <select name="origen" class="form-control" required>
+                    <option value="">Selecciona el origen</option>
+                    @foreach (var estacion in Model.Estaciones){
+                    <option value="@estacion.id">@estacion.nombre</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="destino" class="form-label">Destino:</label>
+                <select name="destino" class="form-control" required>
+                    <option value="">Selecciona el destino</option>
+                    @foreach (var estacion in Model.Estaciones){
+                    <option value="@estacion.id">@estacion.nombre</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="tiempo_estimado" class="form-label">Tiempo Estimado:</label>
+                <input type="number" class="form-control" placeholder="Tiempo Estimado" required name="tiempo_estimado">
+            </div>
+        </div>
         <hr>
         <button type="submit" class="btn btn-success">Enviar</button>
     </form>

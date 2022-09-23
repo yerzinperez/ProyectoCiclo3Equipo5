@@ -7,31 +7,32 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProyectoCiclo3.App.Persistencia.AppRepositorios;
 using ProyectoCiclo3.App.Dominio;
 
-namespace ProyectoCiclo3.App.Frontend.Pages {
-
-    public class FormRutasModel : PageModel {
+namespace ProyectoCiclo3.App.Frontend.Pages{
+    public class FormRutasModel : PageModel{
 
         private readonly RepositorioEstaciones repositorioEstaciones;
-        private readonly RepositorioRutas repositorioRutas;
-        public IEnumerable<Estaciones> Estaciones{get;set;}
-        public Rutas Rutas { get;set;}
+        public IEnumerable<Estaciones> Estaciones {get;set;}
 
-        public FormRutasModel(RepositorioEstaciones repositorioEstaciones, RepositorioRutas repositorioRutas){
-            this.repositorioEstaciones = repositorioEstaciones;
-            this.repositorioRutas= repositorioRutas;
+        private readonly RepositorioRutas repositorioRutas;
+        [BindProperty]
+        public Rutas Ruta {get;set;}
+
+        public FormRutasModel(RepositorioRutas repositorioRutas, RepositorioEstaciones repositorioEstaciones){
+            this.repositorioRutas=repositorioRutas;
+            this.repositorioEstaciones=repositorioEstaciones;
         }
 
         public void OnGet(){
-            Estaciones = repositorioEstaciones.GetAll();
-            Rutas = repositorioRutas.GetAll();
+            Estaciones=repositorioEstaciones.GetAll();
         }
 
-        public IActionResult OnPost(){
+        public IActionResult OnPost(int origen, int destino, int tiempo_estimado){
             if(!ModelState.IsValid){
                 return Page();
-            }            
-            Rutas = repositorioRutas.Create(Rutas);            
-            return RedirectToPage("./List");
+            }else{            
+                repositorioRutas.Create(origen, destino, tiempo_estimado);            
+                return RedirectToPage("./List");
+            }
         }
     }
 }
