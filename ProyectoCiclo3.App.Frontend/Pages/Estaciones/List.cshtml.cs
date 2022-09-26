@@ -12,29 +12,28 @@ namespace ProyectoCiclo3.App.Frontend.Pages{
     [Authorize]
     public class ListEstacionesModel : PageModel{
        
-    private readonly RepositorioEstaciones repositorioEstaciones;
-    public IEnumerable<Estaciones> Estaciones {get;set;}
+        private readonly RepositorioEstaciones repositorioEstaciones;
+        public IEnumerable<Estaciones> Estaciones {get;set;}
 
-    [BindProperty]
-    public Estaciones Estacion {get;set;}
- 
-    public ListEstacionesModel(RepositorioEstaciones repositorioEstaciones)
-    {
-        this.repositorioEstaciones=repositorioEstaciones;
-    }
- 
-    public void OnGet()
-    {
-        Estaciones=repositorioEstaciones.GetAll();
-    }
-    public IActionResult OnPost()
-    {
-        if(Estacion.id>0)
-        {
-        Estacion = repositorioEstaciones.Delete(Estacion.id);
+        [BindProperty]
+        public Estaciones Estacion {get;set;}
+        [TempData]
+        public bool Error {get;set;}
+
+        public ListEstacionesModel(RepositorioEstaciones repositorioEstaciones){
+            this.repositorioEstaciones=repositorioEstaciones;
         }
-        return RedirectToPage("./List");
-    }
+ 
+        public void OnGet(){
+            Estaciones=repositorioEstaciones.GetAll();
+        }
+        public IActionResult OnPost(){
+            if(Estacion.id>0){
+                Error = repositorioEstaciones.Delete(Estacion.id);
+            }
+
+            return RedirectToPage("./List");
+        }
 
     }
 }

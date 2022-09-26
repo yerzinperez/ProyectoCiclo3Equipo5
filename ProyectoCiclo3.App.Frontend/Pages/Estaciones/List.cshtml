@@ -2,21 +2,30 @@
 @model ProyectoCiclo3.App.Frontend.Pages.ListEstacionesModel
 @{
 }
- 
+
+@if(Model.Error){
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>¡Error!</strong> El registro no se puede eliminar porque contiene dependencias en Rutas.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+}
+
 <table class="table table-striped text-center table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Coordenada X</th>
-      <th scope="col">Coordenada Y</th>
-      <th scope="col">Tipo</th>
-      <th scope="col">Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach (var estacion in Model.Estaciones)
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Coordenada X</th>
+            <th scope="col">Coordenada Y</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var estacion in Model.Estaciones)
     {
         <tr>
             <td>@estacion.id</td>
@@ -56,5 +65,5 @@
         </tr>
     }
 
-  </tbody>
+    </tbody>
 </table>
