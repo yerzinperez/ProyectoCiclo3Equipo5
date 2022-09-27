@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+#Para evitar que se filtre las credenciales de base de datos
+ProyectoCiclo3.App.Frontend/appsettings.json
+ProyectoCiclo3.App.Persistencia/AppRepositorios/AppContext.cs

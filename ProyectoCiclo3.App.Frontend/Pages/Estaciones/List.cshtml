@@ -35,9 +35,56 @@
             <td>@estacion.coord_y</td>
             <td>@estacion.tipo</td>
             <td>
-                <a class="btn btn-sm btn-success" asp-page="./Details" asp-route-estacionId="@estacion.id"><i class="fa-solid fa-eye"></i></a>
+                @*<a class="btn btn-sm btn-success" asp-page="./Details" asp-route-estacionId="@estacion.id"><i class="fa-solid fa-eye"></i></a>*@
+                <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ver_@estacion.id"><i class="fa-solid fa-eye"></i></button>
                 <a class="btn btn-sm btn-info" asp-page="./Edit" asp-route-estacionId="@estacion.id"><i class="fa-solid fa-pencil"></i></a>
                 <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#eliminar_@estacion.id"><i class="fa-solid fa-trash"></i></button>
+
+                <div class="modal fade" tabindex="-1" id="ver_@estacion.id" role="dialog" aria-labelledby="Modal para eliminar una estacion" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Ver Estacion</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>ID</td>
+                                            <td>@estacion.id</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nombre</td>
+                                            <td>@estacion.nombre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dirección</td>
+                                            <td>@estacion.direccion</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Coordenada X</td>
+                                            <td>@estacion.coord_x</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Coordenada Y</td>
+                                            <td>@estacion.coord_y</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tipo</td>
+                                            <td>@estacion.tipo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="modal fade" tabindex="-1" id="eliminar_@estacion.id" role="dialog" aria-labelledby="Modal para eliminar una estacion" aria-hidden="true">
                     <div class="modal-dialog">

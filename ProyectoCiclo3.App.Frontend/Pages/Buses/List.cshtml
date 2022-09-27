@@ -24,9 +24,51 @@
             <td>@bus.placa</td>
             <td>
                 <div class="text-center">
-                    <a class="btn btn-sm btn-success" asp-page="./Details" asp-route-busId="@bus.id"><i class="fa-solid fa-eye"></i></a>
+                    <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ver_@bus.id"><i class="fa-solid fa-eye"></i></button>
                     <a class="btn btn-sm btn-info" asp-page="./Edit" asp-route-busId="@bus.id"><i class="fa-solid fa-pencil"></i></a>
                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#eliminar_@bus.id"><i class="fa-solid fa-trash"></i></button>
+
+                    <div class="modal fade" tabindex="-1" id="ver_@bus.id" role="dialog" aria-labelledby="Modal para eliminar un bus" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Ver Bus</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>ID</td>
+                                                <td>@bus.id</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Marca</td>
+                                                <td>@bus.marca</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kilometraje</td>
+                                                <td>@bus.kilometraje</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Número de asientos</td>
+                                                <td>@bus.numero_asientos</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Placa</td>
+                                                <td>@bus.placa</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="modal fade" tabindex="-1" id="eliminar_@bus.id" role="dialog" aria-labelledby="Modal para eliminar una estacion" aria-hidden="true">
                         <div class="modal-dialog">
